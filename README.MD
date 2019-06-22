@@ -4,6 +4,8 @@
 
 ## What is it?
 
+A small script that searches specified subreddits for posts from today containing certain keywords. Compiles all such posts and sends a mail to the user.
+
 ## Installation
 
 1. Download & install [Python3](https://www.python.org/downloads/).
