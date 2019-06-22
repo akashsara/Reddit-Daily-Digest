@@ -33,7 +33,10 @@ def get_min_date():
 
 def get_titles(targets, min_date):
     """
-    Retrieves the 1000 most recent posts from each subreddit. If the post is from today, check if there is any keyword match. If there is, add it to a list of matches for that subreddit. Once this is done for each subreddit, return a dictionary of the format:
+    Retrieves the 1000 most recent posts from each subreddit. 
+    If the post is from today, check if there is any keyword match. 
+    If there is a match, add it to a list of matches for that subreddit. 
+    Once this is done for each subreddit, return a dictionary of the format:
     {
         'subreddit': ['list of matching posts']    
     }
