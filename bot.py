@@ -59,7 +59,7 @@ def get_titles(targets, min_date):
         for submission in reddit.subreddit(subreddit).new(limit=1000):
             date = datetime.fromtimestamp(submission.created_utc)
             if date >= min_date:
-                submission_title = process_text(submission.title).split(' ')
+                submission_title = process_text(submission.title)
                 for keyword in targets[subreddit]:
                     if keyword in submission_title:
                         item = {
@@ -70,7 +70,7 @@ def get_titles(targets, min_date):
                             'url': submission.url
                         }
                         result[subreddit].append(item)
-                    break
+                        break
     return result
 
 def make_message(result):
@@ -93,7 +93,7 @@ def make_message(result):
             message.append(f'Date: {item["date"]}')
             message.append(f'URL: {item["url"]}')
             message.append('\n')
-    return '\n'.join(message)
+    return ('\n'.join(message)).encode('ascii', 'replace')
 
 def send_mail(message):
     """
@@ -119,7 +119,6 @@ if __name__ == '__main__':
         targets[subreddit] = [
             process_text(keyword) for keyword in KEYSEARCH[subreddit]
         ]
-
     min_date = get_min_date()
     result = get_titles(targets, min_date)
     message = make_message(result)
