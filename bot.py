@@ -67,7 +67,7 @@ def get_titles(targets, min_date):
                             'score': submission.score,
                             'comments': len(submission.comments),
                             'date': date,
-                            'url': submission.url
+                            'url': submission.permalink
                         }
                         result[subreddit].append(item)
                         break
