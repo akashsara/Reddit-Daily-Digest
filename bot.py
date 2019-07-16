@@ -29,7 +29,7 @@ def get_min_date():
     :return: datetime object with today's date and time set to 00:00:00:00
     """
     date = datetime.now()
-    return datetime(date.year, date.month, date.day - 1, 0, 0, 0, 0)
+    return datetime(date.year, date.month, date.day, 0, 0, 0, 0)
 
 def get_titles(targets, min_date):
     """
