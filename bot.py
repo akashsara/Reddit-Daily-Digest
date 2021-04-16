@@ -16,7 +16,7 @@ def process_text(text):
     :return: irritant-stripped, lower-cased text
     """
     strip_characters = [
-        '.', ',', '?', '&', '"', "'", '!', ')', '(', '[', ']', '{', '}'
+        '.', ',', '?', '&', '"', "'", '!', ')', '(', '[', ']', '{', '}', ';', ':'
     ]
     for character in strip_characters:
         text = text.replace(character, '')
