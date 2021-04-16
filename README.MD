@@ -30,7 +30,7 @@ Yup. Feel free to do anything with this script. Be sure to credit me/this repo t
 
 1. Retrieves the 1000 (API limitation) most recent posts from a subreddit.
 2. Iterates through each post.
-	2.1. Checks if the post is from today. (00:00:00:00 to now)
+	2.1. Checks if the post is within the past 24 hours.
 	2.2. Checks if any keywords are in the post's title.
 	2.3. If both conditions are met, saves the post information.
 3. Makes a nicely formatted message to mail.
